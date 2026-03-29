@@ -1,11 +1,12 @@
 import { useSSO } from "@clerk/expo";
+import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Alert } from "react-native";
 
 const useSocialAuth = () => {
   const [loadingStrategy, setLoadingStrategy] = useState<string | null>(null);
   const { startSSOFlow } = useSSO();
-
+  const router = useRouter()
   const handleSocialAuth = async (
     strategy: "oauth_google" | "oauth_github" | "oauth_apple",
   ) => {
@@ -30,6 +31,7 @@ const useSocialAuth = () => {
       Alert.alert("Error", "Failed to sign in. Please try again.");
     } finally {
       setLoadingStrategy(null);
+      router.replace("/");
     }
   };
 

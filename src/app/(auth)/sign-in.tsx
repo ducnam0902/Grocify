@@ -96,7 +96,7 @@ export default function SignInScreen() {
           </Pressable>
 
           <Pressable
-            className={`mb-3 h-14 flex-row items-center rounded-2xl border border-foreground bg-foreground px-4 active:opacity-90 ${
+            className={`mb-3 h-14 flex-row items-center rounded-2xl border border-border bg-card px-4 active:opacity-90 ${
               isLoading ? "opacity-70" : ""
             }`}
             disabled={isLoading}
@@ -105,7 +105,7 @@ export default function SignInScreen() {
             <View className="h-8 w-8 items-center justify-center rounded-full bg-white">
               <FontAwesome6 name="apple" size={22} color="#111" />
             </View>
-            <Text className="ml-3 flex-1 text-lg font-semibold text-background">
+            <Text className="ml-3 flex-1 text-lg font-semibold text-card-foreground">
               {isAppleClicked ? "Connecting Apple..." : "Continue with Apple"}
             </Text>
             <FontAwesome name="angle-right" size={18} color="#5f6e66" />
