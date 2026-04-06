@@ -107,6 +107,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
   },
   togglePurchased: async (id) => {
     const currentItem = get().items.find((item) => item.id === id);
+
     if (!currentItem) return;
 
     const nextPurchased = !currentItem.purchased;
